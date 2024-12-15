@@ -1,0 +1,61 @@
+# Data Loading
+import pandas 
+df = pandas.read_csv('Mumbai_1990_2022_Santacruz.csv')
+print(df)
+
+# Data Cleaning
+new_df = df.dropna()
+print(new_df.to_string())
+
+# Exploratory Data Analysis
+mean_tavg = new_df['tavg'].mean()
+print("Mean of Average Temparature:",mean_tavg)
+
+mean_tmin = new_df['tmin'].mean()
+print("Mean of Minimum Tempature:",mean_tmin)
+
+mean_tmax = new_df['tmax'].mean()
+print("Mean of Maximum Tempature:",mean_tmax)
+
+median_tavg = new_df['tavg'].median()
+print("Median of Average Tempature:",median_tavg)
+
+median_tmin = new_df['tmin'].median()
+print("Median of Minimum Tempature:",median_tmin)
+
+median_tmax = new_df['tmax'].median()
+print("Median of Maximum Tempature:",median_tmax)
+
+minimum_tavg = new_df['tavg'].min()
+print("Minimum of Average Tempature:",minimum_tavg)
+
+minimum_tmin = new_df['tmin'].min()
+print("Minimum of Minimum Tempature:",minimum_tmin)
+
+minimum_tmax = new_df['tmax'].min()
+print("Minimum of Maximum Tempature:",minimum_tmax)
+
+maximum_tavg = new_df['tavg'].max()
+print("Maximum of Average Tempature:",maximum_tavg)
+
+maximum_tmin = new_df['tmin'].max()
+print("Maximum of Minimum Tempature:",maximum_tmin)
+
+maximum_tmax = new_df['tmax'].max()
+print("Maximum of Maximum Tempature:",maximum_tmax)
+
+# Temparature Trend Analysis
+import matplotlib.pyplot as plt
+new_df.plot()
+plt.show()
+
+import matplotlib.pyplot as plt
+new_df.plot(kind='hist')
+plt.show()
+
+# Statistical Analysis
+v_pandas = new_df['tavg'].var()
+print("Variance:",v_pandas)
+
+s_pandas = new_df['tavg'].std()
+print("Standard deviation:",s_pandas)
